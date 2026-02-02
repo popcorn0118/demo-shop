@@ -1,0 +1,409 @@
+@import 'variable';
+@import 'mixin';
+
+/* =========================================
+   WooCommerce
+   ========================================= */
+
+body.woocommerce-page {
+
+.woocommerce-js h2 {
+    font-size: 28px !important;
+    line-height: 1.5;
+    background-color: transparent;
+    @include md() {
+        font-size: 24px;
+    }
+}
+.minus, .plus {
+    background-color: antiquewhite;
+}
+input {
+    &[type="text"],
+    &[type="email"],
+    &[type="tel"],
+    &[type="url"],
+    &[type="password"],
+    &[type="search"],
+    &[type="number"],
+    &[type="file"],
+    textarea {
+        padding: 10px 10px;
+        min-height: 50px;
+    }
+    &[type="number"] {
+        background-color: antiquewhite;
+    }
+}
+.remove {
+    color: #ffffff !important;
+    background-color: #cdcdcd;
+    // background-color: #ff5858;
+    &::before {
+        border: 0;
+    }
+    &:hover {
+
+    }
+}
+
+table {
+    border: 0 !important;
+    // border-left: 0px !important;
+    // border-right: 0px !important;
+}
+thead {
+    background-color: transparent !important;
+    > tr {
+        &:first-of-type {
+            th {
+                // background-color: #f7f7f7;
+                font-size: 18px;
+                padding: 20px;
+                border-top: 1px solid var(--ast-border-color);
+                border-bottom: 1px solid var(--ast-border-color);
+            }
+        }
+    }
+}
+tbody {
+    > tr {
+        td {
+            border: 0 !important;
+        }
+        &:nth-of-type(odd) {
+            td, th {
+                background-color: transparent;
+            }
+        }
+        &:nth-of-type(even) {
+            td, th {
+                background-color: #f7f7f7;
+            }
+        }
+        td.actions {
+            // background-color: transparent;
+            // border: 0;
+        }
+    }
+}
+
+}
+
+.woocommerce-js .quantity {
+    .minus, .plus, .qty {
+        background-color: #fff;
+        border: 1px solid #dddddd;
+        padding: .5em !important;
+    }
+    .qty {
+        width: 5em;
+        // border-left: 0px;
+        // border-right: 0px;
+    }
+    .minus {
+        border-right: 0px;
+        border-radius: 25px 0 0 25px;
+    }
+    .plus {
+        border-left: 0px;
+        border-radius: 0 25px 25px 0 ;
+    }
+}
+
+//購物車
+.woocommerce-cart {
+    .wc-proceed-to-checkout {
+        a.checkout-button {
+            padding: .5em;
+        }
+    }
+    .cart-collaterals .cart_totals {
+        table {
+            * {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+            th, td {
+                background-color: transparent;
+                border-top: 0;
+                border-bottom: 1px solid var(--ast-border-color) !important;
+            }
+            tr:last-of-type {
+                th, td {
+                    border-bottom: 0 !important;
+                }
+            }
+        }
+        #shipping_method {
+            > li {
+                display: flex;
+                align-items: center;
+                padding-left: 0 !important;
+                @include ml() {
+                    justify-content: end;
+                }
+                input {
+                    margin: 2px 30px 0 0;
+                }
+            }
+        }
+    }
+    .cart-collaterals .cart_totals>h2, .woocommerce-cart .cart-collaterals .cross-sells>h2 {
+        background-color: var(--second);
+        color: var(--text-w);
+        padding: 15px 20px;
+        font-size: 24px;
+    }
+    .product-thumbnail {
+        img {
+            @include ml() {
+                max-width: 100% !important;
+            }
+        }
+    }
+    .woocommerce-shipping-destination {
+        // 關閉"運送至..."文字
+        display: none;
+    }
+    // .return-to-shop {
+    //     //隱藏購物車沒有商品時"回到商店"按鈕
+    //     display: none;
+    // }
+}
+
+//訂單結帳
+.woocommerce-checkout {
+    .awcdp_deposits_summary {
+     border-left: 1px solid #ddd !important; 
+    }
+    &.woocommerce-order-received .woocommerce-order ul.woocommerce-order-overview {
+        li strong {
+            color: var( --primary );
+        }
+    }
+    #shipping_method {
+        > li {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding-left: 0 !important;
+            input {
+                margin: 2px 30px 0 0 !important;
+            }
+        }
+        
+    }
+    #billing_state_field, #billing_city_field, #billing_postcode_field {
+        width: calc(100% / 3);
+        float: left;
+        @include md() {
+            width: 100%;
+            float: none;
+        }
+    }
+    
+}
+
+//會員專區
+.woocommerce-account {
+    h2 {
+        font-size: 24px;
+    }
+    .woocommerce-MyAccount-navigation {
+        border-right: 1px solid transparent;
+        .ast-wooaccount-user-wrapper {
+            .ast-username {
+                strong {
+                    font-size: 20px;
+                }
+            }
+            img {
+                display: none;
+            }
+        }
+        > ul {
+            background-color: transparent;
+            border: 0;
+            .woocommerce-MyAccount-navigation-link--downloads {
+               // display: none; //隱藏下載次數
+            }
+            li {
+                border-radius: 0;
+                margin: 0;
+                padding: 0;
+                border-top: 1px solid #dfdfdf !important;
+                border-left: 5px solid transparent;
+                &:hover {
+                    &::after {
+                        display: none;
+                    }
+                }
+                > a {
+                    display: block;
+                    padding: 25px 20px;
+                    font-size: 18px;
+                    color: #000;
+                    svg {
+                        fill: var( --primary );
+                    }
+                }
+                &.is-active {
+                    border-left: 5px solid var( --primary );
+                    text-decoration: none;
+                    color: #000;
+                    > a {
+                        background: #fff;
+                        svg {
+                            fill: var( --primary );
+                        }
+                    }
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .woocommerce-MyAccount-content {
+        padding: 5%;
+        border: 3px solid var(--acc);
+        background-color: #fff;
+        h2 {
+            // padding: 20px;
+            // line-height: 1.5;
+        }
+        //內容區 - 訂單
+        .woocommerce-orders-table__row {
+            th, td {
+                border-left: 0;
+                border-right: 0;
+            }
+            .woocommerce-orders-table__cell-order-actions {
+                border-right: 0;
+                .woocommerce-button {
+                    background-color: transparent;
+                    color: #000;
+                    border: 1px solid #ccc;
+                    padding: 10px 15px;
+                    &:hover {
+                        background-color: var(--acc);
+                        border: 1px solid var(--acc);
+                    }
+                }
+            }
+        }
+
+        //內容區 - 訂單詳細頁面
+        .woocommerce-table.awcdp_deposits_summary {
+            th, td {
+                border-left: 0px;
+                border-right: 0px;
+            }
+        }
+    }
+
+    //隱藏國家/台灣
+    .woocommerce-address-fields #billing_country_field,
+    .woocommerce-address-fields #shipping_country_field {
+        display: none;
+    }
+    .woocommerce-Address-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &::before, &::after {
+            display: none !important;
+        }
+        h2 {
+            margin-bottom: 0;
+            padding-left: 10px;
+        }
+        .edit {
+            font-size: 0;
+            display: flex;
+            &::before {
+                content: '';
+                background-image: url('/wp-content/themes/astra-child/assets/img/icon-edit.svg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                display: block;
+                padding: 10px;
+                margin-right: -5px;
+            }
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    // 會員專區選單(手機版改下拉，斷點寫在js裡)
+    .qz-myaccount-nav-toggle {
+        width: 100%;
+        border-radius: 5px;
+        background-color: var(--primary);
+        color: #fff;
+        text-align: left;
+        border: 1px solid #dfdfdf;
+        border-bottom: 0;
+        padding: 15px 20px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &::after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #fff;
+            border-top: 2px solid #fff;
+            transform: rotate(135deg);
+        }
+        &.is-open {
+            margin-bottom: 0px;
+            border-radius: 5px 5px 0 0;
+            &::after {
+
+                transform: rotate(-45deg);
+            }
+        }
+        
+    }
+    .woocommerce-MyAccount-navigation.qz-myaccount-nav--mobile {
+        ul {
+            grid-template-columns: repeat(1, 1fr);
+            border: 1px solid #dfdfdf;
+            border-top: 0;
+            border-radius: 0 0 5px 5px;
+            li {
+                border-left: 0;
+                a {
+                    padding: 15px 20px;
+                    font-size: 16px;
+                    .ahfb-svg-iconset {
+                        display: none;
+                    }
+                }
+                &.is-active {
+                    border-left: 0;
+                    a {
+
+                        color: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// Automatewoo
+// .automatewoo-birthday-field__select {
+//     min-height: 50px !important;
+// }

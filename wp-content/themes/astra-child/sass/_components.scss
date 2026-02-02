@@ -1,0 +1,89 @@
+@import 'variable';
+@import 'mixin';
+
+.blur-50 {
+  @include blur(50px);
+}
+
+.no-br {
+  @include md() {
+    br {
+      display: none;
+    }
+  }
+}
+.text-crimson-text {
+  font-family: 'Crimson Text', 'Noto Serif TC', serif !important;
+}
+
+
+//表格
+$sp: 1px;
+$color: var( --primary );
+$color-l: #fff;
+.table-style {
+  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  table {
+    min-width: 768px;     
+    background: transparent;
+    border: 1px solid $color;
+    margin: 10px 0;
+    // width: 100%;
+    // table-layout: auto !important;   /* 由內容決定欄寬 */
+    // display: inline-table !important; /* 收縮到內容寬 */
+    // width: max-content !important;    /* 以內容為主，不強制 100% */
+  }
+  td, th {
+    border: 1px solid $color;
+    border-width: 0 $sp $sp 0;
+    padding: 16px 24px;
+    // white-space: normal;
+    // overflow-wrap: anywhere;
+    // hyphens: auto;
+    @media (max-width: 768px) {
+      width: auto !important;
+    }
+  }
+  thead {
+    td {
+      color: $color-l;
+      background-color: var( --primary );
+      border-right: 1px solid $color-l;
+      &:last-of-type {
+        border-right: 0;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td, th {
+        // border: 1px solid $color;
+        border-bottom: 0;
+      }
+      &:nth-of-type(even) {
+        td, th {
+          background-color: var( --primary );
+          // border: 1px solid $color;
+        }
+      }
+      
+    }
+  }
+  tr  {
+    td, th {
+      &:last-of-type {
+        border-right: 0;
+      }
+    }
+  }
+  tbody tr:last-of-type td {
+    border-bottom: 0;
+  }
+  strong {
+    font-weight: 500;
+    // font-size: 18px;
+    background: transparent !important;
+  }
+}

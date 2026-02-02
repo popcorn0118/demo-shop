@@ -1,0 +1,230 @@
+@import 'variable';
+@import 'mixin';
+
+.home {
+    .visually-hidden {
+        position:absolute;
+        width:1px;
+        height:1px;
+        padding:0;
+        overflow:hidden;
+        clip:rect(0,0,0,0);
+        white-space:nowrap;
+        border:0;
+        z-index: -9999;
+    }
+    //banner 輪播
+    .qz-index-carousel {
+        .qz-index-carousel__slide {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            &.slick-prev {
+                left: 3%;
+            }
+            &.slick-next {
+                right: 3%;
+            }
+        }
+        .slick-dots {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        // 單純圖片（可點擊）
+        &.image_link {
+            .slick-dots {
+                @include md() {
+                    position: relative;
+                }
+            }
+        }
+
+        // 圖片＋文字＋按鈕
+        &.banner {
+            .qz-index-carousel__track, .slick-list, .slick-track, .slick-slide {
+                min-height: calc(100vh - 79px - 39px);
+                height: auto;
+                @include md() {
+                    min-height: calc(100vh - 79px - 39px - 61px);
+                }
+            }
+            .slick-slide,.qz-index-carousel__slide {
+                width: 100vw;
+                position: relative;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                .qz-index-carousel__overlay {
+                    position: absolute;
+                    z-index: 1;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+                .qz-index-carousel__content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    position: absolute;
+                    z-index: 2;
+                    top: 50%;
+                    max-width: 50%;
+                    padding: 8%;
+                    transform: translateY(-50%);
+                    .qz-index-carousel__sub-title {
+                        margin-bottom: 0;
+                    }
+                    .qz-index-carousel__title {
+                        font-size: 38px;
+                        margin-bottom: 0;
+                        @include ml() {
+                            font-size: 28px;
+                        }
+                    }
+                    .qz-index-carousel__desc {
+                      
+                        
+                    }
+                    .qz-index-carousel__btn {
+                        margin-top: 5px;
+                      
+                        .qz-index-carousel__btn-link {
+                            color: #fff;
+                            background-color: var(--primary);
+                            text-align: center;
+                            min-width: 130px;
+                            padding: 10px 20px;
+                            border-radius: 30px;
+                            display: inline-block;
+                            
+                            &:hover {
+                                background-color: rgba-var(var(--primary), 0.85);
+                            }
+                        }
+                    }
+                    &.left {
+                        left: 0;
+                        transform: translate(0, -50%);
+                        * {
+                            text-align: left;
+                        }
+                    }
+                    &.center {
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        * {
+                            text-align: center;
+                        }
+                    }
+                    &.right {
+                        right: 0;
+                        transform: translate(0, -50%);
+                       
+                    }
+
+                    @include ml() {
+                        width: 100% !important;; 
+                        max-width: 80% !important;; 
+                        left: 50% !important;
+                        right: unset !important;;
+                        transform: translate(-50%, -50%) !important;;
+                        * {
+                            text-align: center;
+                        }
+                        &.left, &.center, &.right {
+                            left: 50%;
+                            right: unset;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                    
+                }
+            }
+            // .qz-index-carousel__pic {
+            //     position: absolute;
+            //     inset: 0;
+            //     width: 100%;
+            //     height: 100%;
+            //     display: block;
+            //     z-index: 0;
+            //     pointer-events: none;
+            //     img {
+            //         position: absolute;
+            //         inset: 0;
+            //         width: 100%;
+            //         height: 100%;
+            //         display: block;
+            //         object-fit: cover;
+            //         object-position: center;
+            //     }
+            // }
+
+
+            // 抓acf的值
+              .qz-index-carousel__overlay {
+                background-color: var(--qz-overlay, transparent);
+                 @include ml() {
+                  background-color: var(--qz-overlay-m, var(--qz-overlay, transparent));
+                }
+              }
+            
+              .qz-index-carousel__content {
+                position: relative;
+                z-index: 2;
+            
+                 @include ml() {
+                  background-color: var(--qz-content-bg-m, transparent);
+            
+                  // content_bg_blur 文字欄位存數字即可，例如 8
+                  $blur: var(--qz-content-blur-m, 0);
+                  backdrop-filter: blur(calc(var(--qz-content-blur-m, 0) * 1px));
+                  -webkit-backdrop-filter: blur(calc(var(--qz-content-blur-m, 0) * 1px));
+                }
+              }
+            
+              .qz-index-carousel__title {
+                color: var(--qz-text, inherit);
+            
+                 @include ml() {
+                  color: var(--qz-text-m, var(--qz-text, inherit));
+                }
+              }
+            
+              .qz-index-carousel__sub-title {
+                color: var(--qz-text-sub, var(--qz-text, inherit));
+            
+                 @include ml() {
+                  color: var(--qz-text-sub-m, var(--qz-text-sub, var(--qz-text, inherit)));
+                }
+              }
+            
+              .qz-index-carousel__desc {
+                color: var(--qz-text-desc, var(--qz-text, inherit));
+            
+                 @include ml() {
+                  color: var(--qz-text-desc-m, var(--qz-text-desc, var(--qz-text, inherit)));
+                }
+              }
+            //   抓acf的值 end
+        }
+    }
+
+    .woocommerce-js {
+        ul.products {
+            column-gap: 40px;
+        }
+    }
+
+}

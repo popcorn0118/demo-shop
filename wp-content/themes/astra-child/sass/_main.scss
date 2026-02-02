@@ -1,0 +1,555 @@
+@import 'variable';
+@import 'mixin';
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+body {
+  * {
+    text-decoration: none;
+
+    // font-family: 'Noto Serif TC', serif;
+  }
+  header.entry-header .entry-title {
+    text-align: center;
+  }
+
+}
+
+button, a {
+  &:focus, &:active {
+    border: 0 !important;
+    outline: none !important;
+  }
+}
+
+
+.slick-track {
+  display: flex;
+}
+.slick-dotted {
+  flex-direction: column;
+}
+.slick-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  > button {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    > span {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid var(--text-w);
+      border-bottom: 2px solid var(--text-w);
+      transform: rotate(135deg);
+    }
+    &:hover {
+      background-color: var(--primary);
+    }
+    &:active, &:focus {
+      background-color: var(--second);
+    }
+  }
+  &.slick-disabled {
+    > button {
+      opacity: 0;
+      cursor: context-menu;
+    }
+  }
+  &.slick-next {
+    > button {
+      > span {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+.slick-dots {
+  li {
+    margin: 0;
+    padding: 8px !important;
+    button {
+      background-color: #dddddd;
+      width: 10px;
+      height: 10px;
+      margin: 0;
+      transition: 0.4s;
+      @include md() {
+        width: 8px;
+        height: 8px;
+      }
+    }
+    &.slick-active {
+      button {
+        width: 25px;
+        background-color: var(--primary);
+      }
+    }
+  }
+  
+}
+
+
+
+
+//header
+.ast-theme-transparent-header .main-header-bar {
+  //拿掉透明頁首的下框線
+  border: 0;
+}
+.main-header-menu {
+  .sub-menu {
+    .menu-link {
+      padding: 18px;
+    }
+  }
+}
+
+// ast-builder-layout-element ast-flex site-header-focus-item ast-header-search
+// ast-builder-layout-element site-header-focus-item ast-header-account
+// ast-builder-layout-element site-header-focus-item ast-header-woo-cart
+// .ast-header-search .ast-search-icon, .ast-header-account .ast-header-account-wrap {
+//   background-color: rgba(#fff, 0.6);
+//   border-radius: 100%;
+//   &:hover {
+//     background-color: #fff;
+//   }
+// }
+// .ast-header-woo-cart .ast-addon-cart-wrap {
+//   svg {
+//     fill: var(--primary);
+//   }
+// }
+.ast-header-search .ast-search-icon,
+.ast-header-account .ast-header-account-wrap,
+.ast-header-woo-cart {
+  a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--acc);
+    border-radius: 100%;
+    line-height: 1;
+    &:hover {
+      background-color:  rgba-var(var(--acc), 0.85);
+    }
+  }
+  svg {
+    fill: var(--primary) !important;
+  }
+}
+.ast-header-woo-cart {
+  i.astra-icon:after {
+    color: #fff !important;
+    background-color: var(--primary) !important;
+  }
+}
+
+// .site-header-primary-section-right {
+//   .site-header-primary-section-right-center, .ast-header-button-1 {
+//     @media (max-width: 1300px) {
+//       display: none !important;
+//       // flex-grow: unset;
+//     }
+//   }
+
+//   }
+
+
+// .ast-custom-button {
+//   white-space: nowrap;
+//   @include shadow();
+// }
+// @include xl() {
+//    .ast-desktop .ast-primary-header-bar.main-header-bar, .ast-header-break-point #masthead .ast-primary-header-bar.main-header-bar {
+//     padding-left: 20px;
+//     padding-right: 20px;
+//   }
+//   .ast-builder-menu-1 .menu-item > .menu-link {
+//     padding-left: 10px;
+//     padding-right: 10px;
+//   }
+// }
+// @include lg() {
+//   .ast-builder-menu-1 .menu-item > .menu-link {
+//     font-size: 16px;
+//     padding-left: 10px;
+//     padding-right: 10px;
+//   }
+//   .ast-builder-grid-row {
+//     grid-column-gap: 3px;
+//   }
+// }
+// .ast-site-header-cart {
+//   //購物車圖示
+//   i.astra-icon {
+//     @include shadow($shadow: 5px 5px 20px 0px rgba-var(var( --primary ), 0.15));
+//     background-color: rgba-var(var(--text)-w, 0.6);
+//     width: 61px;
+//     height: 61px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border-radius: 100%;
+//     &:after {
+//       top: -5px;
+//       right: -4px;
+//       height: 20px;
+//       min-width: 20px;
+//       color: var(--bg) !important;
+//     }
+//   }
+//   .ast-addon-cart-wrap {
+
+//   }
+//   .icon-cart {
+
+//   }
+// }
+
+// // elementor元件
+// .elementor-image-box-title > a {
+//   text-decoration: none !important;
+// }
+
+// //麵包屑
+// .rank-math-breadcrumb {
+//   > p {
+//     margin-bottom: -10px;
+//   }
+//   .separator {
+//     color: transparent;
+//     font-size: 0;
+//     &::before {
+//       content: '';
+//       display: inline-block;
+//       transform: rotate(45deg);
+//       width: 8px;
+//       height: 8px;
+//       margin: 2px 10px;
+//       border-top: 1px solid #a1a1a1;
+//       border-right: 1px solid #a1a1a1;
+//     }
+//   }
+// }
+// //文章分類、彙整、標籤 麵包屑不須顯示最後一個
+// .archive .rank-math-breadcrumb {
+//   .last {
+//     display: none;
+//   }
+// }
+
+
+.btn {
+  .elementor-button {
+    min-width: 180px;
+    // @include shadow();
+    .elementor-button-content-wrapper {
+      align-items: center;
+    }
+    .elementor-button-text {
+      line-height: 1.8;
+    }
+    .elementor-button-icon {
+      position: relative;
+      font-size: 13px;
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        width: 36px;
+        height: 36px;
+        // background-color: #fff;
+        padding: 10px;
+        border-radius: 50px;
+        left: 50%;
+        top: 50%;
+        opacity: 1;
+        transform: translate(-50%, -50%);
+        transition: 0.2s;
+      }
+      > svg {
+        // fill: var( --primary )-dark;
+        position: relative;
+        z-index: 2;
+      }
+    }
+    &:hover {
+      .elementor-button-icon {
+        &::after {
+          width: 50px;
+          height: 50px;
+          opacity: 0;
+        }
+        > svg {
+          // fill: $prvar( --primary )-darkimary-dark !important;
+        }
+      }
+    }
+  }
+  
+}
+
+// .text-primary {
+//   .elementor-heading-title {
+//     @include textGradient(top, var( --primary )-dark, var(--acc));
+//   }
+// }
+// .text-transparent {
+//   .elementor-heading-title {
+//     // @include textGradient(top, rgba-var(#fff, 1), #fff);
+//     background-clip: text;
+//     -webkit-background-clip: text;
+//     color: #ffffff;
+//     text-shadow: 5px 5px 20px rgba-var(var( --primary ), 0.3);
+//     opacity: 0.4;
+//   }
+// }
+
+
+
+// .dscf7_signature {
+//   width: 100%;
+// }
+
+// .dscf7_signature_inner {
+//   width: 700px;
+//   max-width: 100%;
+//   margin: 0 auto;
+// }
+
+// @media (max-width: 767px) {
+//   .dscf7_signature_inner {
+//     width: 100%;
+//   }
+// }
+
+//表單
+
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none; 
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background: var(--bg);
+  display: inline-grid !important;
+  place-content: center;
+  margin-right: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="radio"] {
+  border-radius: 50%; /* radio 圓形 */
+}
+
+/* hover & focus */
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+  border-color: var( --primary );
+}
+
+input[type="checkbox"]:focus-visible,
+input[type="radio"]:focus-visible {
+  outline: 2px solid var( --primary );
+  outline-offset: 2px;
+}
+
+/* checked 樣式 */
+input[type="checkbox"] {
+  &::before {
+    content: "";
+    width: 6px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+  &:checked {
+    background-color: var( --primary ) !important;
+    border-color: var( --primary ) !important;
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+input[type="radio"] {
+  &:checked {
+    border-color: var( --primary );
+    background-color: #fff;
+    &::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var( --primary );
+    }
+  }
+}
+
+/* disabled 狀態 */
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.wpcf7 {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    .text, .title {
+      width: 100%;
+    }
+    .item {
+      width: 100%;
+      margin-bottom: 10px;
+      > p {
+        margin-bottom: 0;
+      }
+      @include md() {
+        margin-bottom: 0px;
+      }
+      .warp {
+        > p {
+          display: flex;
+          gap: 20px;
+        }
+      }
+      br {
+        display: none;
+      }
+      &.w50 {
+        width: calc(50% - 10px);
+        @include md() {
+          width: 100%
+        }
+      }
+      &.hr {
+        width: 100%;
+        border-bottom: 1px solid #c3c3c3;
+        margin: 30px 0 40px;
+      }
+      label {
+        font-size: 16px;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: block;
+      }
+      input, textarea {
+        max-width: 100% !important;
+        width: 100% !important;
+        border-radius: 5px;
+        min-height: 50px;
+      }
+      textarea {
+        height: 150px;
+      }
+      .required {
+        color: red;
+      }
+    }
+    .submit {
+      display: flex;
+      > p {
+        display: flex;
+      }
+      input.wpcf7-submit {
+        font-size: 16px !important;
+        letter-spacing: 1px;
+        min-width: 150px;
+        padding: 20px 10px;
+        background-color: var( --primary );
+        border: 0;
+        border-radius: 50px !important;
+        &:hover {
+          color: var(--bg);
+          background-color: var( --second );
+        }
+      }
+    }
+  }
+  
+}
+.wpcf7 input.wpcf7-form-control:not([type=submit]), .wpcf7 select.wpcf7-form-control, .wpcf7 textarea.wpcf7-form-control {
+  &:focus {
+    border-color: var(--primary);
+  }
+}
+.wpcf7-response-output {
+  padding: 5px 15px !important;
+  border-radius: 7px;
+  background-color: #ffffff80;
+  margin: 5px 0 !important;
+}
+
+
+// footer
+footer {
+  .elementor-shortcode {
+    color: var(--bg);
+  }
+  #menu-footer {
+    display: flex;
+    margin: 0;
+    list-style: none;
+    .menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .menu-item {
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      line-height: 1.8;
+      margin-bottom: 10px;
+      &:not(:last-of-type) {
+        &::after {
+          content: '';
+          height: 90%;
+          width: 1px;
+          background-color: var(--text)-2;
+          display: inline-block;
+          margin: 0 15px;
+        }
+      }
+      .menu-link {
+        color: var(--text-w);
+        font-size: 16px;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  .copyright {
+    font-size: 14px;
+    font-weight: 300;
+    a {
+      color: var(--text-w);
+      &:hover {
+        color: rgba-var(var(--text-w), 0.6);
+      }
+    }
+  }
+}
+
+// Rank Math SEO 的 麵包屑
+.rank-math-breadcrumb {
+
+}

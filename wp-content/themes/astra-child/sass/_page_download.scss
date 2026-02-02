@@ -1,0 +1,584 @@
+@import 'variable';
+@import 'mixin';
+
+body {
+  // 影片列表
+  &.post-type-archive-qz_download, &.tax-qz_download_cat {
+    .qz-download-archive {
+        width: 100%;
+        display: flex;
+        margin: 80px auto;
+        select, input[type="search"] {
+          min-height: 44px;
+        }
+        > .ast-container {
+          width: 100%;
+          max-width: 100%;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .qz-download-controls {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .qz-download-controls-left, .qz-download-controls-right  {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+          }
+          .qz-download-length-warp {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            font-size: 14px;
+            gap: 10px;
+          }
+          .qz-download-cat-warp {
+
+          }
+          .qz-download-search-warp {
+            .qz-download-input {
+              width: 200px;
+              max-width: 100%;
+            }
+          }
+        }
+        .qz-download-table {
+          * {
+            font-size: 16px;
+          }
+          .dt-type-date {
+            text-align: left;
+            .dt-column-header {
+              flex-direction: row;
+              .dt-column-title {
+                text-align: left;
+              }
+            }
+          }
+          .dt-orderable-none, .qz-download-col-action {
+            text-align: center;
+          }
+          .qz-download-btn, .qz-download-child-link {
+            color: #fff;
+            background-color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            &:hover {
+              background-color: var(--second);
+            }
+          }
+          .qz-download-btn-toggle {
+            color: var(--primary);
+            background-color: transparent;
+            box-shadow: 0 0 0 transparent;
+            .qz-download-caret {
+              border: 2px solid #5f5f5f;
+              border-top: 0;
+              border-right: 0;
+              transform: rotate(-45deg);
+              background-color: transparent;
+              display: inline-block;
+              width: 10px;
+              height: 10px;
+            }
+            &:hover {
+              background-color: transparent;
+              
+            }
+            &.is-open {
+              .qz-download-caret {
+
+                transform: rotate(135deg);
+              }
+            }
+          }
+          .qz-download-col-title {
+
+          }
+
+          .qz-download-post-title {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            line-height: 1.8;
+          }
+          
+          .qz-download-filetype, .qz-download-child-ext {
+            margin-top: 6px;
+            background-color: #dbdbdb;
+            padding: 2px 5px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0;
+            min-width: 45px;
+            display: inline-block;
+            line-height: 1.3;
+            &#qz-PDF {
+              background-color: #cf4545;
+              color: #fff;
+            }
+            &#qz-PPT, &#qz-PPTX {
+              background-color: #cf9745;
+              color: #fff;
+            }
+            &#qz-DOC, &#qz-DOCX, &#qz-TXT {
+              background-color: #4d88dd;
+              color: #fff;
+            }
+            &#qz-XLS, &#qz-XLSX, &#qz-CSV {
+              background-color: #56b354;
+              color: #fff;
+            }
+            &#qz-JPG, &#qz-JPEG, &#qz-PNG, &#qz-GIF {
+              background-color: #ca95d1;
+              color: #fff;
+            }
+
+          }
+          .qz-download-note {
+            font-size: 14px;
+          }
+          
+          .qz-download-meta {
+            display: flex;
+            gap: 15px;
+            padding-left: 0px;
+            .qz-download-meta-item {
+              font-size: 14px;
+            }
+          }
+
+          .qz-download-child-row {
+            padding: 0;
+          }
+          .qz-download-child-table {
+            margin: 5px 0;
+            border: 0px solid transparent;
+            th, td {
+              padding: 8px 10px;
+              border: 0px;
+            }
+            .qz-download-child-tr {
+              .qz-download-col-title {
+                display: flex;
+                align-items: start;
+                gap: 10px;
+                .qz-download-child-warp {
+                  display: flex;
+                  flex-direction: column;
+                  .qz-download-child-note {
+                    font-size: 14px;
+                  }
+                }
+                
+              }
+            }
+          }
+        }
+        .qz-download-footer {
+          display: flex;
+          justify-content: space-between;
+          .qz-download-pagination {
+            display: flex;
+            align-items: center;
+            .qz-download-page-btn, .qz-download-page-num, .qz-download-page-current {
+              color: #494949;
+              width: 48px;
+              height: 48px;
+              padding: 5px;
+              background-color: transparent;
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              line-height: 1;
+              font-weight: 400;
+            }
+            .qz-download-page-current {
+              color: var(--primary);
+              border-radius: 100%;
+              font-weight: 600;
+            }
+          }
+        }
+
+        @include ml() {
+          width: 80%;
+          margin: 40px auto;
+          @include md() {
+            width: 100%;
+          }
+          > .ast-container {
+            padding-left: 0;
+            padding-right: 0;
+            gap: 14px;
+            flex-direction: column !important;
+            @include sm() {
+              padding-left: 0 !important;
+              padding-right: 0 !important;
+            }
+          }
+        
+          /* ===== Controls：手機版改成「搜尋一排 + 篩選/筆數第二排」===== */
+          .qz-download-controls {
+            
+            @include md() {
+              flex-direction: column;
+              align-items: stretch;
+              gap: 10px;
+            }
+        
+            .qz-download-controls-left,
+            .qz-download-controls-right {
+              width: 100%;
+              gap: 10px;
+            }
+        
+            .qz-download-controls-left {
+              // order: 2;
+              // justify-content: flex-start;
+            }
+        
+            .qz-download-controls-right {
+              // order: 1;
+              // flex-direction: column;
+              // align-items: stretch;
+              // gap: 10px;
+            }
+        
+            .qz-download-length-warp {
+              font-size: 14px;
+              gap: 8px;
+            }
+        
+            .qz-download-select {
+              width: auto;
+              max-width: 100%;
+            }
+        
+            .qz-download-cat-warp {
+              width: 100%;
+              .qz-download-select {
+                width: 100%;
+              }
+            }
+        
+            .qz-download-search-warp {
+              width: 100%;
+              .qz-download-input {
+                width: 100%;
+                height: 44px;
+                padding: 10px 12px;
+              }
+            }
+          }
+        
+          /* ===== Table → Card ===== */
+          .qz-download-table,
+          .qz-download-table tbody,
+          .qz-download-table tr,
+          .qz-download-table th,
+          .qz-download-table td {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+          }
+          .qz-download-table {
+            border: 0;
+        
+            /* 表頭在手機直接消失（排序改用你之後要做的篩選/抽屜，不要硬留箭頭） */
+            thead,
+            tfoot {
+              display: none;
+            }
+        
+            /* DataTables wrapper 有時會塞 inline width，手機直接放開 */
+            &.dataTable {
+              width: 100%;
+            }
+        
+            tbody {
+              display: block;
+            }
+        
+            /* 每一列變卡片 */
+            tr.qz-download-row {
+              display: grid;
+              grid-template-columns: 1fr auto;
+              grid-template-areas:
+                "title action"
+                "meta  action";
+              gap: 0 10px;
+              width: 100%;
+              margin: 0 0 12px 0;
+              padding: 14px 14px;
+              border: 1px solid #e6e6e6;
+              border-radius: 14px;
+              background: #fff;
+              @include sm() {
+                display: flex;
+                flex-direction: column;
+              }
+        
+              /* 用 dt-hasChild + is-open，保持狀態但做出視覺差異 */
+              &.dt-hasChild.is-open {
+                border-color: rgba(0, 0, 0, 0.12);
+                background-color: #4f5d330d;
+                margin-bottom: 0;
+                border-radius: 12px 12px 0 0;
+                border-bottom: 0;
+                + .qz-download-child-row {
+                  .qz-download-child {
+                    border-radius: 0 0 12px 12px;
+                    overflow: hidden;
+                    border: 1px solid rgba(0, 0, 0, 0.12);
+                    border-top: 0;
+                  }
+                }
+              }
+            }
+        
+            /* 原本表格 td：手機改成區塊 */
+            tr.qz-download-row > td {
+              display: block;
+              padding: 0 !important;
+              border: 0 !important;
+            }
+        
+            /* 只留「標題 + 動作」兩個區塊，其它欄位不硬塞 */
+            tr.qz-download-row > td.qz-download-col-title {
+              grid-area: title;
+              min-width: 0;
+              box-shadow: 0 0 0 transparent;
+            }
+        
+            tr.qz-download-row > td.qz-download-col-action {
+              grid-area: action;
+              text-align: right;
+              white-space: nowrap;
+              display: flex;
+              align-items: center;
+              box-shadow: 0 0 0 transparent;
+            }
+        
+            /* 類別/日期/大小：不刪資料，但手機不顯示（你如果要顯示，可再開第二行 meta） */
+            tr.qz-download-row > td.qz-download-col-cat,
+            tr.qz-download-row > td.qz-download-col-date,
+            tr.qz-download-row > td.qz-download-col-size {
+              display: none !important;
+            }
+        
+            /* 標題行 */
+            .qz-download-col-title {
+              @include sm() {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center !important;
+                gap: 10px;
+              }
+            }
+            .qz-download-post-title {
+              align-items: flex-start;
+              gap: 10px;
+              line-height: 1.5;
+              @include sm() {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+              }
+            }
+            .qz-download-note {
+              @include sm() {
+                text-align: center;
+              }
+            }
+        
+            /* filetype badge 微調 */
+            .qz-download-filetype,
+            .qz-download-child-ext {
+              margin-top: 2px;
+              min-width: 46px;
+              padding: 3px 6px;
+              font-size: 12px;
+              line-height: 1.2;
+            }
+        
+            /* 次資訊：縮小、換行、不要硬 left padding */
+            .qz-download-meta {
+              grid-area: meta;
+              padding-left: 0;
+              flex-wrap: wrap;
+              gap: 8px 12px;
+              @include sm() {
+                justify-content: center;
+              }
+              .qz-download-meta-item {
+                font-size: 13px;
+                color: #6b6b6b;
+              }
+            }
+        
+            /* 動作按鈕：手機要大顆可點 */
+            .qz-download-btn,
+            .qz-download-child-link {
+              padding: 10px 14px;
+              min-height: 44px;
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              color: #474747;
+              background-color: #4f5d330d;
+              @include sm() {
+                width: 100%;
+              }
+              &:hover {
+                background-color: #4f5d330d;
+
+              }
+            }
+        
+            /* 展開按鈕：縮成 icon button，但保持可點尺寸 */
+            .qz-download-btn-toggle {
+              width: 44px;
+              height: 44px;
+              padding: 0;
+              border: 1px solid #e6e6e6;
+              background-color: transparent;
+              &:active, &:focus {
+                background-color: transparent;
+              }
+              @include sm() {
+                width: 100%;
+                border: 0;
+                height: 35px;
+              }
+              .qz-download-caret {
+                width: 10px;
+                height: 10px;
+              }
+            }
+        
+            /* ===== Child row：變成卡片內的清單 ===== */
+            tr.qz-download-child-row {
+              display: block;
+              margin: -12px 0 12px 0; /* 貼近上一張卡 */
+            }
+        
+            tr.qz-download-child-row > td.qz-download-child-row {
+              display: block;
+              padding: 0 !important;
+              border: 0 !important;
+            }
+        
+            .qz-download-child {
+              padding: 0 14px 14px 14px;
+              border-left: 1px solid #e6e6e6;
+              border-right: 1px solid #e6e6e6;
+              border-bottom: 1px solid #e6e6e6;
+              background: #fafafa;
+            }
+        
+            .qz-download-child-table {
+              margin: 10px 0 0 0;
+              width: 100%;
+        
+              colgroup {
+                display: none;
+              }
+        
+              tbody {
+                display: block;
+              }
+        
+              tr.qz-download-child-tr {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                gap: 8px 12px;
+                padding: 10px 10px;
+                border: 1px solid #e9e9e9;
+                background: #fff;
+                border-radius: 6px;
+                @include sm() {
+                  display: flex;
+                  flex-direction: column;
+                  text-align: center;
+                }
+                &:not(:last-child) {
+                  margin-bottom: 10px;
+                }
+              }
+        
+              td {
+                padding: 0 !important;
+                border: 0 !important;
+              }
+        
+              /* 子檔案：只顯示「檔名 + 下載」；日期大小可後續再加一行小字 */
+              td.qz-download-col-cat,
+              td.qz-download-col-date,
+              td.qz-download-col-size {
+                display: none !important;
+              }
+        
+              td.qz-download-col-title {
+                min-width: 0;
+               
+                .qz-download-child-name {
+                  line-height: 1.4;
+                }
+              }
+        
+              td.qz-download-col-action {
+                text-align: right;
+                align-self: start;
+              }
+        
+              .qz-download-child-link {
+                min-height: 40px;
+                padding: 8px 12px;
+              }
+            }
+          }
+        
+          /* ===== Footer：資訊 + 分頁改成直排置中 ===== */
+          .qz-download-footer {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        
+            .qz-download-info {
+              text-align: center;
+              font-size: 13px;
+              color: #6b6b6b;
+            }
+        
+            .qz-download-pagination {
+              justify-content: center;
+              flex-wrap: wrap;
+              gap: 6px;
+        
+              .qz-download-page-btn,
+              .qz-download-page-num,
+              .qz-download-page-current {
+                width: 44px;
+                height: 44px;
+                border: 1px solid transparent;
+              }
+        
+              .qz-download-page-current {
+                border-color: rgba(0, 0, 0, 0.12);
+              }
+            }
+          }
+        }
+        
+    }
+  }
+}
+

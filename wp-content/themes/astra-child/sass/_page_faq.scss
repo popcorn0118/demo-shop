@@ -1,0 +1,107 @@
+@import 'variable';
+@import 'mixin';
+
+body {
+    &.post-type-archive-qz_faq, &.tax-qz_faq_cat {
+        .qz-faq-archive {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .qz-faq-item {
+                width: calc(100% - 2em);
+                display: flex;
+                flex-direction: column;
+                border-radius: 5px;
+                border: 1px solid #d1d1d1 !important;
+                padding: 10px 25px !important;
+                @include ml() {
+                    width: 100%;
+                }
+                .qz-faq-title {
+                    font-size: 20px;
+                    padding: 10px 0px 10px 0;
+                    margin: 0;
+                    > a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+                }
+                .qz-toggle-btn {
+                    position: relative;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    flex-shrink: 0;
+                    &::before, &::after {
+                        content: '';
+                        width: 15px;
+                        height: 1px;
+                        background-color: #d1d1d1;
+                        display: block;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    &::after {
+                        transform: translate(-50%, -50%) rotate(90deg);
+                    }
+                    
+                }
+                .qz-faq-panel {
+                    padding: 15px 0 10px 0px;
+                    margin-top: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    border-top: 1px solid #d1d1d1;
+                }
+                .qz-faq-more {
+                    margin-top: 20px;
+                    font-size: 14px;
+                }
+
+                &.is-open {
+                    .qz-toggle-btn {
+                        &::after {
+                            transform: translate(-50%, -50%) rotate(0deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .faq {
+//     .e-n-accordion-item-title {
+//         background-image: url(../img/icon-symbol_q-2.svg);
+//         background-size: 40px;
+//         background-repeat: no-repeat;
+//         padding-left: 65px !important;
+//         background-position: 0px 23px;
+  
+//         + .e-child {
+//         background-image: url(../img/icon-symbol_a-2.svg);
+//         background-size: 40px;
+//         background-repeat: no-repeat;
+//         padding-left: 65px !important;
+//         background-position: 0px 0px;
+//         }
+//     }
+//     .e-closed {
+//         svg {
+//             .cls-1 {
+//                 // stroke: #b7b7b7 !important;
+//             }
+//         }
+//     }
+//     .e-opened {
+//         svg {
+//             .cls-1 {
+//                 stroke: #e07e5e !important;
+//             }
+//         }
+//     }
+//   }

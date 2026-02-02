@@ -1,0 +1,77 @@
+@import 'variable';
+@import 'mixin';
+
+
+// // 表單區塊
+// .contact-form-warp {
+//     position: relative;
+// }
+// .contact-form {
+//     position: absolute !important;
+//     padding-right: 25% !important;
+//     right: 0;
+//     top: 0;
+//     height: 100%;
+//     @include xl() {
+//         padding-right: 120px !important;
+//     }
+//     @include lg() {
+//         position: relative !important;
+//         padding-right: 30px !important;
+//         padding-left: 30px !important;
+//     }
+//     @include md() {
+//         padding-right: 15px !important;
+//         padding-left: 15px !important;
+//     }
+//     form {
+//         label {
+//             font-size: 20px;
+//             color: var(--text)-w;
+//             letter-spacing: 2px;
+//         }
+//         .wpforms-required-label {
+//             color: #FF5454;
+//         }
+//         .wpforms-field {
+//             padding: 16px 0;
+//             &::after {
+//                 content: '';
+//                 display: block;
+//                 height: 1px;
+//                 width: 100%;
+//                 @include borderGradient(bottom left, rgba-var(#DCDCDC, 0), #DCDCDC);
+//             }
+//         }
+//         input, textarea {
+//             color: var(--text)-w !important;
+//             letter-spacing: 2px;
+//             background-color: transparent;
+//             border: 0;
+//             padding: 15px 0 25px 0;
+//             &::placeholder {
+//                 font-size: 18px;
+//                 color: #DCDCDC;
+//             }
+//             &:focus {
+//                 background-color: transparent;
+//                 border: 0;
+//             }
+            
+//         }
+//         button {
+//             @include bg-btn();
+//             font-size: 18px;
+//             border: 0;
+//             padding: 12px 24px;
+//             color: var( --primary );
+//             line-height: 1.8;
+//             margin-top: 20px;
+//             transition: 0.6s;
+//             &:hover {
+//                 color: var( --primary );
+//                 background-color: rgba-var(var(--text)-w, 0.8);
+//             }
+//         }
+//     }
+// }
