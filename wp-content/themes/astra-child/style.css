@@ -996,6 +996,75 @@ footer .copyright a:hover {
 .home .woocommerce-js ul.products {
   column-gap: 40px;
 }
+/* line 231, sass/_page_index.scss */
+.home .home-news .home-news__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+@media screen and (max-width: 768px) {
+  /* line 231, sass/_page_index.scss */
+  .home .home-news .home-news__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* line 239, sass/_page_index.scss */
+.home .home-news .home-news__grid .home-news__item {
+  border: 1px solid transparent;
+  box-shadow: 0 30px 40px #0000000d;
+  transition: 0.4s;
+  background-color: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 100%;
+  padding: 0;
+}
+/* line 248, sass/_page_index.scss */
+.home .home-news .home-news__grid .home-news__item:hover {
+  border: 1px solid var(--primary);
+}
+/* line 252, sass/_page_index.scss */
+.home .home-news .home-news__grid .home-news__warp {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+/* line 257, sass/_page_index.scss */
+.home .home-news .home-news__grid .home-news__item-info {
+  position: relative;
+  padding: 30px 30px 70px 30px;
+  flex: 1;
+}
+/* line 262, sass/_page_index.scss */
+.home .home-news .home-news__grid .home-news__meta {
+  font-size: 0.8125rem;
+}
+/* line 265, sass/_page_index.scss */
+.home .home-news .home-news__grid .home-news__item-title {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+/* line 268, sass/_page_index.scss */
+.home .home-news .home-news__grid .home-news__excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+/* line 271, sass/_page_index.scss */
+.home .home-news .home-news__grid .home-news__more {
+  position: absolute;
+  left: 30px;
+  bottom: 25px;
+}
+/* line 275, sass/_page_index.scss */
+.home .home-news .home-news__grid .home-news__more:hover {
+  color: var(--primary);
+}
 
 /* line 5, sass/_page_article.scss */
 .blog, .archive, .search, .single-post, .single {
