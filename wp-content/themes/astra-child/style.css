@@ -4121,6 +4121,10 @@ body.woocommerce-page tbody > tr:nth-of-type(even) td, body.woocommerce-page tbo
   display: none;
 }
 /* line 190, sass/_page_products.scss */
+.single-product #main .related.products {
+  margin-bottom: -8px;
+}
+/* line 193, sass/_page_products.scss */
 .single-product .related.products {
   overflow: hidden;
   width: 100vw !important;
@@ -4131,15 +4135,23 @@ body.woocommerce-page tbody > tr:nth-of-type(even) td, body.woocommerce-page tbo
   background-color: #f3f3f3;
   padding: 80px 20px 40px 20px;
 }
-/* line 200, sass/_page_products.scss */
+/* line 203, sass/_page_products.scss */
 .single-product .related.products ul.products, .single-product .related.products > h2 {
   max-width: 100%;
   width: 1200px;
   margin: 0 auto;
 }
-/* line 205, sass/_page_products.scss */
+/* line 208, sass/_page_products.scss */
 .single-product .related.products > h2 {
   margin-bottom: 40px;
+}
+/* line 212, sass/_page_products.scss */
+.single-product .related.products ul.products > li {
+  background-color: transparent;
+}
+/* line 214, sass/_page_products.scss */
+.single-product .related.products ul.products > li .yith-add-to-wishlist-button-block {
+  margin: 0 auto;
 }
 
 /* line 6, sass/_toc.scss */
