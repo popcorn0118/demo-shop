@@ -30,36 +30,34 @@ jQuery(document).ready(function ($) {
     });
   }
 
-   /**
-   * 首頁banner輪播
-   * wp-content\themes\astra-child\inc\frontend\30-index-carousel-shortcode.php
-   */
+/**
+ * 首頁banner輪播
+ * wp-content\themes\astra-child\inc\frontend\30-index-carousel-shortcode.php
+ */
   var $index_carousel = $('.qz-index-carousel__track');
-  if (!$index_carousel.length) return;
 
-  $index_carousel.slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    speed: 600,
-    infinite: true,
-    pauseOnHover: false,
-    pauseOnFocus: false,
-    adaptiveHeight: false,
-    prevArrow: '<div class="slick-prev"><button type="button"><span></span></button></div>',
-    nextArrow: '<div class="slick-next"><button type="button"><span></span></button></div>',
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-        }
-      }
-    ]
-  });
+  if ($index_carousel.length && typeof $.fn.slick === 'function') {
+    if (!$index_carousel.hasClass('slick-initialized')) {
+      $index_carousel.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 600,
+        infinite: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        adaptiveHeight: false,
+        prevArrow: '<div class="slick-prev"><button type="button"><span></span></button></div>',
+        nextArrow: '<div class="slick-next"><button type="button"><span></span></button></div>',
+        responsive: [
+          { breakpoint: 768, settings: { arrows: false } }
+        ]
+      });
+    }
+  }
 
 
   /**
